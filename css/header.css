@@ -1,6 +1,7 @@
 body {
   font-family: "David Libre";
   background: #9c7a7a;
+  scroll-behavior: auto;
 }
 
 header {

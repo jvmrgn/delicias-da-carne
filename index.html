@@ -9,6 +9,11 @@
     <link href="./css/reset.css" rel="stylesheet" type="text/css" />
     <link href="./css/footer.css" rel="stylesheet" type="text/css" />
     <link href="./css/reveal.css" rel="stylesheet" type="text/css" />
+    <link href="./css/dropdown.css" rel="stylesheet" type="text/css" />
+    <link href="./css/radiobutton.css" rel="stylesheet" type="text/css" />
+    <link href="./css/checkbox.css" rel="stylesheet" type="text/css" />
+    <link href="./css/mensagem.css" rel="stylesheet" type="text/css" />
+
     <link
       href="./css/formulario-contato.css"
       rel="stylesheet"
@@ -18,6 +23,7 @@
 
     <title>Document</title>
   </head>
+
   <body>
     <header>
       <!-- <img src="img/shecookin.png" class="inicio-background" /> -->
@@ -32,10 +38,10 @@
           />
           <div class="espacin"></div>
           <div class="botoes-inicio reveal">
-            <a href="#" class="nav">Inicio</a>
-            <a href="#" class="nav">Informações</a>
-            <a href="#" class="nav">Produtos</a>
-            <a href="#" class="nav">Contato</a>
+            <a href="#inicio" class="nav">Inicio</a>
+            <a href="#informacoes" class="nav">Informações</a>
+            <a href="#produtos" class="nav">Produtos</a>
+            <a href="#contato" class="nav">Contato</a>
           </div>
         </div>
       </div>
@@ -45,7 +51,7 @@
 
       <div class="container-seta">
         <div class="seta reveal">
-          <a>
+          <a href="#informacoes">
             <div class="center-con">
               <div class="round">
                 <span></span>
@@ -60,7 +66,7 @@
     </header>
 
     <main>
-      <div class="sobre-nos-container reveal">
+      <div class="sobre-nos-container reveal" id="informacoes">
         <div class="sobre-nos">
           <div class="cards card1">
             <div class="content-cards">
@@ -125,7 +131,7 @@
 
       <div class="parallax"></div>
 
-      <section class="cortes-de-carnes">
+      <section class="cortes-de-carnes" id="produtos">
         <div class="sobre-nos-texto reveal">
           <h2 class="title-containers">Alguns dos nossos cortes</h2>
         </div>
@@ -287,8 +293,7 @@
           <!-- mais -->
         </div>
       </section>
-
-      <section class="formulario-contato">
+      <section class="formulario-contato" id="contato">
         <div class="container-formulario container-centralizado">
           <div class="container-contato reveal">
             <div class="container-imagem">
@@ -304,85 +309,100 @@
               ></iframe>
             </div>
             <div class="container-formulario reveal">
-              <!-- <h2 class="title-form">Entre em contato conosco!</h2> -->
-              <form>
+              <form id="contact-form">
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" name="nome" required />
+                <p class="area-texto-normais"></p>
 
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required />
+                <p class="area-texto-normais-email"></p>
 
                 <label for="telefone">Telefone:</label>
-                <input type="tel" id="telefone" name="telefone" required />
+                <input
+                  type="tel"
+                  id="telefone"
+                  name="telefone"
+                  maxlength="11"
+                  required
+                />
+                <p class="area-texto-normais-telefone"></p>
 
-                <label for="sexo">Sexo:</label>
-                <select id="sexo" name="sexo">
-                  <option value="masculino">Masculino</option>
-                  <option value="feminino">Feminino</option>
-                  <option value="nao_informar">Não Informar</option>
-                </select>
-
-                <label for="carne_preferida">Carne Preferida:</label>
-                <select id="carne_preferida" name="carne_preferida">
-                  <option value="bovina">Bovina</option>
-                  <option value="suina">Suína</option>
-                  <option value="frango">Frango</option>
-                  <option value="cordeiro">Cordeiro</option>
-                  <option value="vegetariano">Vegetariano</option>
-                  <option value="vegetariano">Carnes exóticas</option>
-                </select>
-
-                <label class="info-title"
-                  >Desejo receber informações por:</label
-                >
-
-                <div class="info-checkbox-group">
-                  <input
-                    type="checkbox"
-                    id="todos_os_meios"
-                    name="todos_os_meios"
-                    value="todos_os_meios"
-                    class="info-checkbox"
-                  />
-                  <label for="todos_os_meios" class="info-label"
-                    >Todos os meios</label
-                  >
+                <div class="preferencia">
+                  <h2 class="tituloForm">
+                    Qual seu tipo preferencial de carnes?
+                  </h2>
+                  <div class="radio-option">
+                    <div
+                      class="radio-button"
+                      data-value="carnes-exoticas"
+                    ></div>
+                    <label for="carnes-exoticas">Carnes exóticas</label>
+                  </div>
+                  <div class="radio-option">
+                    <div
+                      class="radio-button"
+                      data-value="carnes-tradicionais"
+                    ></div>
+                    <label for="carnes-tradicionais">Carnes tradicionais</label>
+                  </div>
+                  <div class="radio-option">
+                    <div class="radio-button" data-value="ambas"></div>
+                    <label for="ambas">Ambas</label>
+                  </div>
                 </div>
 
-                <div class="info-checkbox-group">
-                  <input
-                    type="checkbox"
-                    id="sms"
-                    name="sms"
-                    value="sms"
-                    class="info-checkbox"
-                  />
-                  <label for="sms" class="info-label">SMS</label>
+                <div class="dropdown">
+                  <h2 class="tituloForm">
+                    Selecione o seu tipo favorito de carnes
+                  </h2>
+                  <div class="dropdown-trigger">
+                    <p class="selected-value">Selecionar</p>
+                    <p class="dropdown-arrow">&#9662;</p>
+                  </div>
+                  <div class="dropdown-options">
+                    <div class="dropdown-option" data-value="bovina">
+                      Bovina
+                    </div>
+                    <div class="dropdown-option" data-value="suina">Suína</div>
+                    <div class="dropdown-option" data-value="aves">Aves</div>
+                    <div class="dropdown-option" data-value="frutos-do-mar">
+                      Frutos do Mar
+                    </div>
+                    <div class="dropdown-option" data-value="outras">
+                      Outras
+                    </div>
+                  </div>
                 </div>
 
-                <div class="info-checkbox-group">
-                  <input
-                    type="checkbox"
-                    id="email_marketing"
-                    name="email_marketing"
-                    value="email_marketing"
-                    class="info-checkbox"
-                  />
-                  <label for="email_marketing" class="info-label">E-mail</label>
+                <div class="comunications">
+                  <h2 class="tituloForm">Receber comunicações por:</h2>
+                  <div class="checkbox" id="todos-meios">
+                    <div class="checkbox-icon"></div>
+                    <p class="checkbox-label">Todos os meios</p>
+                  </div>
+                  <div class="checkbox">
+                    <div class="checkbox-icon"></div>
+                    <p class="checkbox-label">Email</p>
+                  </div>
+                  <div class="checkbox">
+                    <div class="checkbox-icon"></div>
+                    <p class="checkbox-label">SMS</p>
+                  </div>
                 </div>
 
-                <div class="info-checkbox-group">
-                  <input
-                    type="checkbox"
-                    id="whatsapp"
-                    name="whatsapp"
-                    value="whatsapp"
-                    class="info-checkbox"
-                  />
-                  <label for="whatsapp" class="info-label">WhatsApp</label>
+                <div class="text-area">
+                  <div class="input-wrapper">
+                    <div class="input-label">
+                      <h2 class="tituloForm">Mensagem:</h2>
+                    </div>
+                    <div class="input-container">
+                      <div class="input-field" contenteditable="true"></div>
+                    </div>
+                  </div>
                 </div>
 
-                <input type="submit" value="Enviar" class="btn-enviar" />
+                <input value="Enviar" class="submit-button" type="submit" />
               </form>
             </div>
           </div>
@@ -416,5 +436,9 @@
 
     <script src="./js/reveal.js"></script>
     <script src="./js/selectAll.js"></script>
+    <script src="./js/carneType.js"></script>
+    <script src="./js/dropdown.js"></script>
+    <script src="./js/checkbox.js"></script>
+    <script src="./js/formulario.js"></script>
   </body>
 </html>

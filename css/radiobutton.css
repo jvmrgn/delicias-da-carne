@@ -1,0 +1,27 @@
+.preferencia {
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.radio-button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #3f3737;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.radio-button.selected {
+  background-color: #724e4e;
+}
+
+label {
+  cursor: pointer;
+}
