@@ -22,6 +22,10 @@ main {
   gap: 2em;
 }
 
+.sobre-nos-container {
+  scroll-margin-top: 14em;
+}
+
 .sobre-nos {
   gap: 4em;
   display: flex;
@@ -69,6 +73,7 @@ main {
 
 .cortes-de-carnes {
   align-items: center;
+  scroll-margin-top: 8em;
 }
 
 .container {

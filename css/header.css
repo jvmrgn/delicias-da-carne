@@ -38,7 +38,7 @@ header {
   align-items: center;
   justify-content: center;
   z-index: 2;
-  flex-direction: row-reverse;
+  /* flex-direction: row-reverse; */
 }
 
 .logo-inicios {
