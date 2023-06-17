@@ -90,6 +90,15 @@ const telefoneInput = document.getElementById("telefone");
 nomeInput.addEventListener("blur", validarNome);
 emailInput.addEventListener("blur", validarEmail);
 telefoneInput.addEventListener("blur", validarTelefone);
+telefoneInput.addEventListener("blur", function () {
+  let telefone = telefoneInput.value;
+  telefone = telefone.replace(/\(/g, "");
+  telefone = telefone.replace(/\)/g, "");
+  telefone = telefone.replace(/\-/g, "");
+  telefone = telefone.replace(/\ /g, "");
+
+  telefoneInput.value = telefone;
+});
 
 function validarNome() {
   const texto = document.querySelector(".area-texto-normais");
